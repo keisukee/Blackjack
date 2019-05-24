@@ -16,8 +16,17 @@ public class Blackjack {
     }
   }
 
-  public void oneRound() {
-    System.out.println("Fight!!");
+  public void who_win(Player player, Dealer dealer) {
+    if (player.score < 22 && dealer.score < 22) {
+      if (player.score > dealer.score) {
+        System.out.println(player.name + "の勝ち");
+      } else if (player.score == dealer.score) {
+        System.out.println(player.name + "と" + dealer.name + "は引き分け");
+      } else {
+        System.out.println(dealer.name + "の勝ち");
+        System.out.println("YOU LOSE");
+      }
+    }
   }
 
   public static void main(String[] args) {
@@ -41,15 +50,16 @@ public class Blackjack {
     blackjack.dealer = dealer;
     player.getName();
 
-    System.out.println(dealer.name);
-    System.out.println(player.name);
-    blackjack.oneRound();
+    // ここからゲーム開始
+
     player.draw(cards);
     player.draw(cards);
-    player.winOrLose();
     dealer.draw(cards);
     dealer.secretDraw(cards);
-    blackjack.doFinish();
-    player.inOrFold(cards);
+
+    player.playerTurn(cards);
+    dealer.DealerTurn(cards);
+
+    blackjack.who_win(player, dealer);
   }
 }
