@@ -1,4 +1,4 @@
-##Blackjack in Java
+## Blackjack in Java
 ### rule
 - ディーラーは17以上になるまで引き続ける
 - 21に近いほうが勝ち
@@ -21,7 +21,7 @@
     - Card
   - Blackjack
 
-##### TODO
+#### TODO
 - 動作上の問題
   - Jより上を10として扱う
   - Aを1としても11としても扱えるように
