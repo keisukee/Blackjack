@@ -1,36 +1,51 @@
 import java.util.*;
 
 public class Deck {
-  int leaves; // トランプの残りの枚数
   ArrayList<Card> cards;
 
-  public Deck() {
-  }
-  public void shuffle() {
-    int a = (int)(Math.random() * 52);
-    int b = (int)(Math.random() * 52);
-    String tmp_suit = cards.get(a).suit;
-    cards.get(a).suit = cards.get(b).suit;
-    cards.get(b).suit = tmp_suit;
+  Deck() {
 
-    int tmp_number = cards.get(a).number;
-    cards.get(a).number = cards.get(b).number;
-    cards.get(b).number = tmp_number;
   }
 
   public static void main(String[] args) {
 
     ArrayList<Card> cards = new ArrayList<Card>();
     Deck deck = new Deck();
-    for (int i = 1; i <= 13; i++) {
-      cards.add(new Card("spade", i));
-      cards.add(new Card("clover", i));
-      cards.add(new Card("dia", i));
-      cards.add(new Card("heart", i));
+    for (int i = 1; i <= 1; i++) {
+      cards.add(new Card("SPADE", i, "A"));
+      cards.add(new Card("CLOVER", i, "A"));
+      cards.add(new Card("DIA", i, "A"));
+      cards.add(new Card("HEART", i, "A"));
+    }
+    for (int i = 2; i <= 10; i++) {
+      cards.add(new Card("SPADE", i, Integer.toString(i)));
+      cards.add(new Card("CLOVER", i, Integer.toString(i)));
+      cards.add(new Card("DIA", i, Integer.toString(i)));
+      cards.add(new Card("HEART", i, Integer.toString(i)));
+    }
+    for (int i = 11; i <= 11; i++) {
+      cards.add(new Card("SPADE", 10, "J"));
+      cards.add(new Card("CLOVER",10, "J"));
+      cards.add(new Card("DIA", 10, "J"));
+      cards.add(new Card("HEART", 10, "J"));
+    }
+    for (int i = 12; i <= 12; i++) {
+      cards.add(new Card("SPADE", 10, "Q"));
+      cards.add(new Card("CLOVER", 10, "Q"));
+      cards.add(new Card("DIA", 10, "Q"));
+      cards.add(new Card("HEART", 10, "Q"));
+    }
+    for (int i = 13; i <= 13; i++) {
+      cards.add(new Card("SPADE", 10, "K"));
+      cards.add(new Card("CLOVER", 10, "K"));
+      cards.add(new Card("DIA", 10, "K"));
+      cards.add(new Card("HEART", 10, "K"));
     }
 
     deck.cards = cards;
 
-    deck.shuffle();
+    for (int i = 0; i < cards.size(); i++) {
+      System.out.println(cards.get(i).suit + " " + cards.get(i).number + " " + cards.get(i).rank);
+    }
   }
 }
