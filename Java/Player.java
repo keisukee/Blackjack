@@ -46,13 +46,4 @@ class Player extends Person {
       System.out.println("例外発生");
     }
   }
-
-  public static void main(String[] args) {
-    Player taro = new Player();
-    Person person = new Person("hogehoge");
-    System.out.println(100);
-    taro.getName();
-    System.out.println(taro.name);
-    System.out.println(person.name);
-  }
 }
