@@ -5,6 +5,7 @@ class Person {
   String name;
   int score = 0;
 
+
   Person() {} // これがないとサブクラスでインスタンスを生成するときにエラーが出る。なぜなら、サブクラスはスーパークラスの引数なしコンストラクタを呼び出そうとするから
 
   Person(String name) {
@@ -30,16 +31,5 @@ class Person {
   public int getScore() {
     System.out.println(this.name + "の得点は" + this.score + "です");
     return this.score;
-  }
-
-  public void winOrLose() {
-    if (this.score > 21) {
-      System.out.println(this.name + "の負けです");
-    } else if (this.score == 21) {
-      System.out.println(this.name + "の勝利");
-    } else {
-      this.getScore();
-      System.out.println("まだまだ続くぞい"); // TODO ディーラーとプレイヤーの勝敗を決めるようにする
-    }
   }
 }
